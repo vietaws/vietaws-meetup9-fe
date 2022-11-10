@@ -1,0 +1,62 @@
+/* body {
+            background-color: #05c46b;
+            font-family: Verdana;
+            text-align: center;
+} 
+form {
+    background-color: #fff;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px 20px;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+}  */
+ 
+
+.formcontrol {
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+
+.formcontrol label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+.formcontrol input,
+.formcontrol select,
+.formcontrol textarea {
+    border: 1px solid #777;
+    border-radius: 2px;
+    font-family: inherit;
+    padding: 10px;
+    display: block;
+    width: 95%;
+}
+
+/* Styling form-control Radio
+button and Checkbox */
+.formcontrol input[type="radio"],
+.formcontrol input[type="checkbox"] {
+    display: inline-block;
+    width: auto;
+}
+
+
+.btn {
+    background-color: #05c46b;
+    border: 1px solid #777;
+    border-radius: 2px;
+    font-family: inherit;
+    font-size: 21px;
+    display: block;
+    width: 100px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+
+}
+.btnCover{
+    display: flex;
+    justify-content: center;
+}
