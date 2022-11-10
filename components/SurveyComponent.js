@@ -10,6 +10,7 @@ const SurveyComponent = (props) => {
   useEffect(() => {
     const isSubmmited = async () => {
       const user = await Auth.currentAuthenticatedUser();
+      console.log('cognito object:', user);
       const idToken = user.signInUserSession.idToken.jwtToken;
       const requestHeader = {
         headers: {
@@ -27,6 +28,7 @@ const SurveyComponent = (props) => {
       if (data.length !== 0) {
         // setShowSurvey(false);
         console.log('isSubmitted: YES ', data);
+        // props.onSubmitHandler(false);
       } else {
         console.log('isSubmitted: NO ', data);
       }

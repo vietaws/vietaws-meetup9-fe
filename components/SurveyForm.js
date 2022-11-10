@@ -133,7 +133,7 @@ const SurveyForm = (props) => {
         {/* Question 3 */}
         <div className={styles.formcontrol}>
           <label>3. Mức độ hài lòng về Speakers?</label>
-          <label htmlFor="time-1">
+          <label htmlFor="speaker-1">
             <input
               type="radio"
               id="speaker-1"
@@ -163,17 +163,17 @@ const SurveyForm = (props) => {
             />
             Bình Thường
           </label>
-          <label htmlFor="speaker-3">
+          <label htmlFor="speaker-4">
             <input
               type="radio"
-              id="speaker-3"
+              id="speaker-4"
               name="speaker"
               value="2"
               onChange={(e) => setSpeakerScore(e.target.value)}
             />
             Không Tốt
           </label>
-          <label htmlFor="speaker-3">
+          <label htmlFor="speaker-5">
             <input
               type="radio"
               id="speaker-5"
