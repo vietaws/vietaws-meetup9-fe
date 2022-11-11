@@ -39,7 +39,7 @@ const SurveyComponent = (props) => {
     };
 
     isSubmmited();
-  }, [dispatch]);
+  }, []);
 
   return (
     <>

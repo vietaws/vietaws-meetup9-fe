@@ -39,6 +39,12 @@ const SurveyForm = (props) => {
     );
     console.log('Response Message: ', res);
     dispatch(surveyActions.setSubmittedSurveyStatus());
+    const surveyScanned = await API.get(
+      'survey-vietaws-event-apigw',
+      '/questions',
+      requestMsg
+    );
+    console.log('all survey:', surveyScanned);
   };
   return (
     <div>
