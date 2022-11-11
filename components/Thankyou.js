@@ -18,7 +18,7 @@ const Thankyou = () => {
         '/questions',
         requestHeader
       );
-      console.log('Data: ', data);
+      // console.log('Data: ', data);
       setTotal(data.total);
       setAvgScore(data.overallScore.toFixed(2));
     };

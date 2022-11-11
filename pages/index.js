@@ -7,35 +7,11 @@ import SurveyComponent from '../components/SurveyComponent';
 import Thankyou from '../components/Thankyou';
 import { config } from '../config';
 import { useSelector } from 'react-redux';
-import { useEffect, useState } from 'react';
-import { Auth, API } from 'aws-amplify';
-import SurveyResult from '../components/SurveyResult';
 
 Amplify.configure(config);
 
 export default function Home() {
   const submitted = useSelector((state) => state.survey.isSubmitted);
-  console.log('submitted in Index.js', submitted);
-  const [numResponses, setNumResponses] = useState(0);
-  useEffect(() => {
-    const getSurvey = async () => {
-      const user = await Auth.currentAuthenticatedUser();
-      const idToken = user.signInUserSession.idToken.jwtToken;
-      const requestHeader = {
-        headers: {
-          Authtication: idToken,
-        },
-      };
-      const data = await API.get(
-        'survey-vietaws-event-apigw',
-        '/questions',
-        requestHeader
-      );
-      console.log('Data: ', data.Items);
-      // setNumResponses(data.total);
-    };
-    // getSurvey();
-  }, []);
 
   return (
     <div className={styles.container}>

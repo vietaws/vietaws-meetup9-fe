@@ -7,7 +7,7 @@ const surveySlice = createSlice({
   reducers: {
     setSubmittedSurveyStatus(state) {
       state.isSubmitted = true;
-      console.log('SUbmitted from reducers', state.isSubmitted);
+      //   console.log('SUbmitted from reducers', state.isSubmitted);
     },
   },
 });
