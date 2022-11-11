@@ -20,7 +20,7 @@ const Thankyou = () => {
       );
       console.log('Data: ', data);
       setTotal(data.total);
-      setAvgScore(data.overallScore);
+      setAvgScore(data.overallScore.toFixed(2));
     };
     getFeedbacks();
   }, []);
