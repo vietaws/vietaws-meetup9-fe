@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import styles from './SurveyForm.module.css';
 import { API, Auth } from 'aws-amplify';
+import { useDispatch } from 'react-redux';
+import { surveyActions } from '../store/survey-slice';
 
 const SurveyForm = (props) => {
   const [overall, setOverall] = useState(5);
@@ -8,6 +10,7 @@ const SurveyForm = (props) => {
   const [speakerScore, setSpeakerScore] = useState(5);
   const [mostLike, setMostLike] = useState('N/A');
   const [recommendation, setRecommendation] = useState('N/A');
+  const dispatch = useDispatch();
   const formHandler = async (e) => {
     e.preventDefault();
     const user = await Auth.currentAuthenticatedUser();
@@ -35,7 +38,7 @@ const SurveyForm = (props) => {
       requestMsg
     );
     console.log('Response Message: ', res);
-    props.onSubmitHandler(false);
+    dispatch(surveyActions.setSubmittedSurveyStatus());
   };
   return (
     <div>

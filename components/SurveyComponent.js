@@ -3,10 +3,13 @@ import { API, Auth } from 'aws-amplify';
 import React, { useEffect, useState } from 'react';
 import SurveyForm from './SurveyForm';
 import Thankyou from './Thankyou';
+import { useDispatch } from 'react-redux';
+import { surveyActions } from '../store/survey-slice';
 
 const SurveyComponent = (props) => {
   //check the user is existed or not. if not, load the SurveyForm, or say thank you.
   //   const [showSurvey, setShowSurvey] = useState(true);
+  const dispatch = useDispatch();
   useEffect(() => {
     const isSubmmited = async () => {
       const user = await Auth.currentAuthenticatedUser();
@@ -29,17 +32,18 @@ const SurveyComponent = (props) => {
         // setShowSurvey(false);
         console.log('isSubmitted: YES ', data);
         // props.onSubmitHandler(false);
+        dispatch(surveyActions.setSubmittedSurveyStatus());
       } else {
         console.log('isSubmitted: NO ', data);
       }
     };
 
     isSubmmited();
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
-      <SurveyForm onSubmitHandler={props.onSubmitHandler} />
+      <SurveyForm />
     </>
   );
 };

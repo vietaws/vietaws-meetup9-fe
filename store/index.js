@@ -1,14 +1,9 @@
-import { createStore } from 'redux';
+import { configureStore } from '@reduxjs/toolkit';
 
-const submitSurveyState = { isSubmitted: false };
+import surveyReducers from './survey-slice';
 
-const submitSurveyReducer = (state = submitSurveyState, action) => {
-  if (action.type === 'SUBMIT') {
-    return { isSubmitted: true };
-  }
-  return state;
-};
-
-const store = createStore(submitSurveyReducer);
+const store = configureStore({
+  reducer: { survey: surveyReducers },
+});
 
 export default store;
