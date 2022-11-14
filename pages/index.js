@@ -16,10 +16,10 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>VietAWS | Meeting #9 | Serverless Workshop on AWS</title>
+        <title>VietAWS</title>
       </Head>
-      <h1>VietAWS | Meetup #9 | Serverless Workshop on AWS</h1>
-      <Authenticator signUpAttributes={['name']}>
+      <h1>VietAWS | See you at my next AWSome Builds!</h1>
+      {/* <Authenticator signUpAttributes={['name']}>
         {({ signOut, user }) => (
           <div>
             <h3>
@@ -28,14 +28,13 @@ export default function Home() {
             </h3>
 
             {!submitted && <SurveyComponent />}
-            {/* <p>There are {numResponses} responses.</p> */}
             {submitted && <Thankyou />}
             <button onClick={signOut} style={{ background: 'tomato' }}>
               Sign out
             </button>
           </div>
         )}
-      </Authenticator>
+      </Authenticator> */}
     </div>
   );
 }
